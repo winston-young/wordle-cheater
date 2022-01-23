@@ -1,14 +1,12 @@
-import nltk
-nltk.download('words')
-from nltk.corpus import words
 import random
 import time
 import os
 
+from allowed_words import allowed_words_list
+
 class WordleSolver:
 
-    five_letter_words = list(set(word for word in words.words() if len(word) == 5))
-    five_letter_words = [word for word in five_letter_words if word.lower() == word]
+    five_letter_words = allowed_words_list
 
     success = False
 
